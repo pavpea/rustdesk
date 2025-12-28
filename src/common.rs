@@ -1027,10 +1027,10 @@ pub fn get_api_server(api: String, custom: String) -> String {
         res.pop();
     }
     if res.starts_with("https")
-        && res.ends_with(":21114")
-        && get_builtin_option(keys::OPTION_ALLOW_HTTPS_21114) != "Y"
+        && res.ends_with(":41114")
+        && get_builtin_option(keys::OPTION_ALLOW_HTTPS_41114) != "Y"
     {
-        return res.replace(":21114", "");
+        return res.replace(":41114", "");
     }
     res
 }
@@ -1058,7 +1058,7 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "http://remote.qiuxiaotao.com:41114".to_owned()
 }
 
 #[inline]
